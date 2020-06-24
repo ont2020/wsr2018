@@ -25,6 +25,7 @@ namespace manage_agents
         MySqlConnection conn;
         DataRowView dat;
         int del;
+        string f, m, l, d;
 
         public MainWindow()
         {
@@ -62,6 +63,13 @@ namespace manage_agents
             reader2.Close();
         }
 
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 win = new Window1();
+            this.Close();
+            win.ShowDialog();
+        }
+
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             dat = dataGrid.SelectedItem as DataRowView;
@@ -91,6 +99,10 @@ namespace manage_agents
                 else del = 0;
             }
             else Load_dat();
+            f = textBox.Text;
+            m = textBox1.Text;
+            l = textBox2.Text;
+            d = textBox3.Text;
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
@@ -111,6 +123,19 @@ namespace manage_agents
                 else MessageBox.Show("Нельзя удалить риэлтора, т.к. он состоит в спросе и предложениях!");
             }
             else MessageBox.Show("Выберите риэлтора!");
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if (f != textBox.Text | m != textBox1.Text | l != textBox2.Text | d != textBox3.Text)
+            {
+                MySqlCommand command = new MySqlCommand($"UPDATE rialtori SET fam = '{textBox.Text}', name = '{textBox1.Text}', otch = '{textBox2.Text}', deal = '{textBox3.Text}' WHERE idrialtori = " + dat["idrialtori"], conn);
+                MySqlDataReader read = command.ExecuteReader();
+                DataTable table = new DataTable();
+                table.Load(read);
+                read.Close();
+                Load_dat();
+            }
         }
     }
 }

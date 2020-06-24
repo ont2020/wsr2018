@@ -27,8 +27,8 @@
         <Label x:Name="label_Copy3" Content="supples" FontSize="13" HorizontalAlignment="Left" Margin="607,188,0,0" VerticalAlignment="Top" Height="27" Width="54"/>
         <Label x:Name="label_Copy4" Content="demands" FontSize="13" HorizontalAlignment="Left" Margin="607,23,0,0" VerticalAlignment="Top" Height="27" Width="73"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" FontSize="14" Height="23" Margin="450,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="141"/>
-        <Button x:Name="button" Content="edit" HorizontalAlignment="Left" FontSize="13" Margin="304,188,0,0" VerticalAlignment="Top" Width="141" Height="35"/>
-        <Button x:Name="button1" Content="new" FontSize="13" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="button" Content="edit" HorizontalAlignment="Left" FontSize="13" Margin="304,188,0,0" VerticalAlignment="Top" Width="141" Height="35" Click="button_Click"/>
+        <Button x:Name="button1" Content="new" FontSize="13" HorizontalAlignment="Left" Margin="10,429,0,0" VerticalAlignment="Top" Width="115" Click="button1_Click"/>
         <Button x:Name="button2" Content="delete" FontSize="13" HorizontalAlignment="Left" Margin="146,429,0,0" VerticalAlignment="Top" Width="117" Click="button2_Click"/>
 
     </Grid>
